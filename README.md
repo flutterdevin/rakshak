@@ -4,15 +4,15 @@ Rakshak is a mobile application build using Flutter.
 
 It aims at improving women security and ensuring travel safety for womens.
 
-## Getting Started
+## Contribution
 
-This project is a starting point for a Flutter application.
+New contributors, please contact us before starting the contribution.
 
-A few resources to get you started if this is your first Flutter project:
+Our Email ID: flutterdevindia@gmail.com
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### Steps to Contribute
+- Create an issue 
+- Wait till it is assigned
+- Start working on the issue
+- Create a PR and mention the issue in the PR
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
