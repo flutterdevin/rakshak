@@ -19,7 +19,13 @@ class MyApp extends StatelessWidget {
         ),
         backgroundColor: Colors.black54,
         body: SafeArea(
-          child: Container(),
+          child: Container( alignment: Alignment.center,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('myimage/backg.jpg'),
+                fit: BoxFit.cover,
+              ),
+            ),),
         ),
       ),
     );
