@@ -1,6 +1,8 @@
 # rakshak
 
-A new Flutter application.
+Rakshak is a mobile application build using Flutter.
+
+It aims at improving women security and ensuring travel safety for womens.
 
 ## Getting Started
 
