@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "116140868124",
+    "firebase_url": "https://distress-alert.firebaseio.com",
+    "project_id": "distress-alert",
+    "storage_bucket": "distress-alert.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:116140868124:android:82b9d38d0f7d719e06d5d9",
+        "android_client_info": {
+          "package_name": "com.regalCoder.rakshak"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "116140868124-q38n0t2efrfnbfd2p4ak2btl324qbceg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_JCBWNjJAlDFCQvUu_xAQ33nBJfrGCDs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "116140868124-q38n0t2efrfnbfd2p4ak2btl324qbceg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
