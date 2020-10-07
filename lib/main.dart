@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rakshak/shake_detector_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         ),
         backgroundColor: Colors.black54,
         body: SafeArea(
-          child: Container(),
+          child: ShakeDetectorScreen(),
         ),
       ),
     );
