@@ -2,7 +2,7 @@
 
 Rakshak is a mobile application build using Flutter.
 
-It aims at improving women security and ensuring travel safety for womens.
+This is a distress alert app. This app will create an emergency alert when it's triggered.
 
 ## Feature Requirement
 
