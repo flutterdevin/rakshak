@@ -1,16 +1,27 @@
 # rakshak
 
-A new Flutter application.
+Rakshak is a mobile application build using Flutter.
 
-## Getting Started
+This is a distress alert app. This app will create an emergency alert when it's triggered.
 
-This project is a starting point for a Flutter application.
+## Feature Requirement
 
-A few resources to get you started if this is your first Flutter project:
+This app should alert the dear ones in emergency situations when the device is shaked or button click.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- Take details of 5 people to be contacted during emergency.
+- Allow user to add a message to be sent to the people during emergency.
+- Share current location (Google Map Link) of the user in the message.
+- Message should be sent as SMS & whatsapp message.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Feel free to add new features from your side. (Create a issue first).
+
+## Contribution
+
+Dear contributer, please add a comment on the issue you want to work or create a new issue for feature enhancement/ bug fixes.
+
+### Steps to Contribute
+- Create an issue 
+- Wait till it is assigned
+- Start working on the issue
+- Create a PR and mention the issue in the PR
+
