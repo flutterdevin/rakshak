@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/rendering.dart';
+import 'package:shake/shake.dart';
+import 'package:rakshak/shake_detector.dart';
 
 class SOSScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    ShakeDetectorClass().initializeShakeDetector(context);
+
     return Scaffold(
       backgroundColor: Color(0xFFD80015),
       body: SafeArea(

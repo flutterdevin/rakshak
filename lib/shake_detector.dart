@@ -1,7 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:shake/shake.dart';
 
-class ShakeDetectorScreen extends StatelessWidget {
+class ShakeDetectorClass {
+  void initializeShakeDetector(BuildContext context) {
+    int count = 0;
+    ShakeDetector.autoStart(
+        shakeThresholdGravity: 6.0,
+        onPhoneShake: () {
+          print(count);
+          count++;
+          showReportDialog(context);
+        });
+
+//    ShakeDetector.waitForStart(onPhoneShake: () {
+//      print("Shake waitForStart");
+//    });
+  }
+
   void showReportDialog(BuildContext context) {
     showDialog(
       context: context,
@@ -15,24 +30,6 @@ class ShakeDetectorScreen extends StatelessWidget {
           )
         ]);
       },
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    ShakeDetector.autoStart(
-        shakeSlopTimeMS: 1000,
-        onPhoneShake: () {
-          showReportDialog(context);
-        });
-
-    return Scaffold(
-      body: Center(
-        child: Text(
-          "Shake the device...",
-          style: TextStyle(color: Colors.black),
-        ),
-      ),
     );
   }
 }
