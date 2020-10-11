@@ -1,12 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:shake/shake.dart';
-import 'package:rakshak/shake_detector.dart';
+import 'package:sendsms/sendsms.dart';
 
-class SOSScreen extends StatelessWidget {
+class SOSScreen extends StatefulWidget {
+  @override
+  _SOSScreenState createState() => _SOSScreenState();
+}
+
+class _SOSScreenState extends State<SOSScreen> {
+  @override
+  void initState() {
+    ShakeDetector.autoStart(onPhoneShake: () {
+      sseenndd();
+    });
+    super.initState();
+  }
+
+  void sseenndd() async {
+    String phoneNumber = "+918340792564";
+    String message = "it is a random msg text";
+    await Sendsms.onGetPermission();
+    setState(() async {
+      if (await Sendsms.hasPermission()) {
+        await Sendsms.onSendSMS(phoneNumber, message);
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    ShakeDetectorClass().initializeShakeDetector(context);
-
     return Scaffold(
       backgroundColor: Color(0xFFD80015),
       body: SafeArea(
@@ -41,7 +63,8 @@ class SOSScreen extends StatelessWidget {
                     shape: BoxShape.circle,
                   ),
                   child: FlatButton(
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100.0)),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(100.0)),
                     onPressed: () {
                       print('Alert --- Emergency');
                     },
@@ -101,5 +124,6 @@ class SOSScreen extends StatelessWidget {
         ),
       ),
     );
+    ;
   }
 }

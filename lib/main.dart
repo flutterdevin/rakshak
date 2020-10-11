@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rakshak/shake_detector.dart';
+
 import 'package:rakshak/screens/sos_screen.dart';
 
 void main() {
