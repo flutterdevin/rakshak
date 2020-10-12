@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shake/shake.dart';
 import 'package:sendsms/sendsms.dart';
+import 'package:geolocator/geolocator.dart';
 
 class SOSScreen extends StatefulWidget {
   @override
@@ -14,6 +15,17 @@ class _SOSScreenState extends State<SOSScreen> {
       sseenndd();
     });
     super.initState();
+    lat_long();
+  }
+
+  void lat_long() async {
+    try {
+      Position position =
+          await getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+      print(position);
+    } catch (e) {
+      print(e);
+    }
   }
 
   void sseenndd() async {
