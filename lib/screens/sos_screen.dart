@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:shake/shake.dart';
 import 'package:sendsms/sendsms.dart';
 import 'package:geolocator/geolocator.dart';
+import 'newContactScreen.dart';
 
 class SOSScreen extends StatefulWidget {
+  static const String id = 'SOSScreen';
   @override
   _SOSScreenState createState() => _SOSScreenState();
 }
@@ -126,7 +128,12 @@ class _SOSScreenState extends State<SOSScreen> {
                       color: Color(0xFF777777),
                     ),
                     onPressed: () {
-                      print('Setting button');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => newContact(),
+                        ),
+                      );
                     },
                   ),
                 ],
