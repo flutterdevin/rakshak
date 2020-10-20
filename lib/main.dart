@@ -10,9 +10,13 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(initialRoute: SOSScreen.id, routes: {
-      SOSScreen.id: (context) => SOSScreen(),
-      newContact.id: (context) => newContact(),
-    });
+    return MaterialApp(
+
+      initialRoute: SOSScreen.id,
+      routes: {
+        SOSScreen.id: (context) => SOSScreen(),
+        newContact.id: (context) => newContact(),
+      },
+    );
   }
 }

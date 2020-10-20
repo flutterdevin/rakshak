@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class newContact extends StatefulWidget {
@@ -8,9 +9,9 @@ class newContact extends StatefulWidget {
 
 class _newContactState extends State<newContact> {
   List<String> people = [];
-  TextEditingController _controllerPeople=new TextEditingController();
-  TextEditingController _controllermsg=new TextEditingController();
-  String msg= null;
+  TextEditingController _controllerPeople = new TextEditingController();
+  TextEditingController _controllermsg = new TextEditingController();
+  String msg = null;
 
   Widget _phoneTile(String name) {
     return Padding(
@@ -52,8 +53,10 @@ class _newContactState extends State<newContact> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+
         appBar: AppBar(
-          title: const Text('SMS/MMS Example'),
+          title: const Text('Add Contacts and Message'),
+          backgroundColor: Colors.black45,
         ),
         body: ListView(
           children: <Widget>[
@@ -100,13 +103,25 @@ class _newContactState extends State<newContact> {
                 decoration: InputDecoration(labelText: " Add Message"),
                 controller: _controllermsg,
                 onChanged: (String value) => setState(() {
-                  msg=_controllermsg.text;
+                  msg = _controllermsg.text;
                   print(msg);
                 }),
               ),
             ),
             Divider(),
-            FlatButton(onPressed: (){ Navigator.of(context).pop();}, child: Text('SOS_screen'),color: Colors.yellow,)
+            Padding(
+              padding: EdgeInsets.fromLTRB(15, 8, 15, 8),
+              child: FlatButton(
+                textColor: Colors.white,
+                padding: EdgeInsets.all(12),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text('BACK',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+
+                color: Colors.teal,
+              ),
+            )
           ],
         ),
       ),

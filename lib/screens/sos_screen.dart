@@ -11,18 +11,19 @@ class SOSScreen extends StatefulWidget {
 }
 
 class _SOSScreenState extends State<SOSScreen> {
+  Position position;
   @override
   void initState() {
+    lat_long();
     ShakeDetector.autoStart(onPhoneShake: () {
       sseenndd();
     });
     super.initState();
-    lat_long();
   }
 
   void lat_long() async {
     try {
-      Position position =
+       position =
           await getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
       print(position);
     } catch (e) {
@@ -32,7 +33,7 @@ class _SOSScreenState extends State<SOSScreen> {
 
   void sseenndd() async {
     String phoneNumber = "+918340792564";
-    String message = "it is a random msg text";
+    String message = "$position";
     await Sendsms.onGetPermission();
     setState(() async {
       if (await Sendsms.hasPermission()) {
@@ -44,27 +45,35 @@ class _SOSScreenState extends State<SOSScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFD80015),
+      appBar: AppBar(
+        title: Text(
+          'RAKSHAK',
+          style: TextStyle(fontWeight: FontWeight.w900, fontSize: 26),
+        ),
+        backgroundColor: Colors.black45,
+      ),
+      backgroundColor: Color(0xFF610000),
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              'RAKSHAK',
+              'Shake To Send Text',
               style: TextStyle(
+                fontFamily: 'Lemonada',
                 color: Colors.white,
-                fontSize: 40.0,
+                fontSize: 26.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
             Container(
               height: 250.0,
               decoration: BoxDecoration(
-                color: Color(0xFFFF1423),
+                color: Color(0xFF910000),
                 shape: BoxShape.circle,
                 border: Border.all(
-                  color: Color(0xFFE71626),
+                  color: Color(0xFF910000),
                   width: 20.0,
                 ),
               ),
@@ -80,11 +89,14 @@ class _SOSScreenState extends State<SOSScreen> {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(100.0)),
                     onPressed: () {
-                      print('Alert --- Emergency');
+                      setState(() {
+                        lat_long();
+                        sseenndd();
+                      });
                     },
                     child: Center(
                       child: Text(
-                        'SOS',
+                        'Press',
                         style: TextStyle(
                           color: Color(0xFF777777),
                           fontSize: 40.0,
@@ -118,7 +130,12 @@ class _SOSScreenState extends State<SOSScreen> {
                       color: Color(0xFF777777),
                     ),
                     onPressed: () {
-                      print('Add member');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => newContact(),
+                        ),
+                      );
                     },
                   ),
                   IconButton(
@@ -128,12 +145,7 @@ class _SOSScreenState extends State<SOSScreen> {
                       color: Color(0xFF777777),
                     ),
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => newContact(),
-                        ),
-                      );
+                      print('Setting');
                     },
                   ),
                 ],
