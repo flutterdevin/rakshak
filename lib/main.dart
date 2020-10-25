@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:rakshak/screens/sos_screen.dart';
+import 'package:rakshak/screens/newContactScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,24 +11,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: SOSScreen(),
+
+      initialRoute: SOSScreen.id,
+      routes: {
+        SOSScreen.id: (context) => SOSScreen(),
+        newContact.id: (context) => newContact(),
+      },
     );
   }
 }
-
-/*
-Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'Rakshak',
-            style: TextStyle(
-              color: Colors.white,
-            ),
-          ),
-        ),
-        backgroundColor: Colors.black54,
-        body: SafeArea(
-          child: ShakeDetectorScreen(),
-        ),
-      )
- */
