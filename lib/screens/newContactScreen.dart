@@ -53,10 +53,9 @@ class _newContactState extends State<newContact> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-
         appBar: AppBar(
           title: const Text('Add Contacts and Message'),
-          backgroundColor: Colors.black45,
+          backgroundColor: Color(0xFF8F4FA0),
         ),
         body: ListView(
           children: <Widget>[
@@ -117,8 +116,10 @@ class _newContactState extends State<newContact> {
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
-                child: Text('BACK',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-
+                child: Text(
+                  'Save ',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                ),
                 color: Colors.teal,
               ),
             )
